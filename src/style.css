@@ -1,0 +1,221 @@
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
+
+:root{
+    --clr-Moderate-blue: hsl(238, 40%, 52%);
+    --clr-Soft-Red: hsl(358, 79%, 66%);
+    --clr-Light-grayish-blue: hsl(239, 57%, 85%);
+    --clr-Pale-red: hsl(357, 100%, 86%);
+
+    --clr-Dark-blue: hsl(212, 24%, 26%);
+    --clr-Grayish-Blue: hsl(211, 10%, 45%);
+    --clr-Light-gray: hsl(223, 19%, 93%);
+    --clr-Very-light-gray: hsl(228, 33%, 97%);
+    --clr-White: hsl(0, 0%, 100%);
+
+    --fw-5: 500;
+    --fw-7: 700;
+    --padding: 1.5rem
+}
+
+body{
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: var(--clr-Very-light-gray);
+}
+
+.container, .add-comment-container{
+    max-width: 730px;
+    width: 90%;     
+    margin-inline: auto;
+}
+
+.comment-container, .add-comment-container{
+    background-color: var(--clr-White);
+    margin-block: 1.3rem;   
+    padding: 1.3rem var(--padding);
+    border-radius: 0.5rem;
+}
+
+.user, .btns, .edit{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comment-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 'user user'
+                         'content content'
+                         'status btns';
+}
+
+.user{
+    grid-area: user;
+}
+.content-container{
+    grid-area: content;    
+    margin-top: 0.5rem;
+}
+.content{
+    color: var(--clr-Grayish-Blue);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+.comment-status{
+    grid-area: status;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: var(--clr-Very-light-gray);
+    padding: 0.3rem 1rem;
+    width: fit-content;
+    border-radius: 5px;
+    color: var(--clr-Moderate-blue);
+    font-weight: var(--fw-7);
+}
+.btns{
+    grid-area: btns;
+    margin-left: auto;
+}
+
+@media (width > 45em){
+    .comment-container{
+        grid-template-areas: 'status user btns'
+                             'status content content'
+                             '. content content' ;
+        grid-template-rows: 1fr auto auto;
+        row-gap: 0;
+    }
+    .isreply{
+        margin-left: auto;
+        width: 88%;
+        position: relative;
+    }
+    .isreply::before{
+        content: '';
+        width: 1.5px;
+        height: 110%;
+        position: absolute;
+        left: -10%;
+        top: -5%;
+        background-color: var(--clr-Grayish-Blue);
+        opacity: 0.5;
+    }
+    .comment-status{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .name{
+        margin-inline: 1rem;
+    }
+    .add-comment-container{
+        display: flex !important; 
+    }
+    .add-comment-container.isreply{
+        margin-inline: 0;
+        margin-left: auto;
+    }
+    .submit-btn{
+        max-height: 3rem;
+        margin-left: 0;
+    }
+    .textarea{
+        flex: 1;
+    }
+    .comment-status{
+        padding: 0.7rem;
+    }
+}
+
+.add-comment-container{
+    display: grid;
+    grid-template-areas: 'textarea textarea'
+                         'ava btn';
+    gap: 1.5rem;    
+    max-width: 730px;       
+    margin-inline: auto;
+}
+
+.textarea{
+    grid-area: textarea;
+    padding: 1rem;
+    border: 1px solid var(--clr-Light-gray);
+    border-radius: 0.5rem;
+}
+
+.ava{
+    grid-area: ava;
+}
+
+.submit-btn{
+    grid-area: btn;
+    margin-left: auto;
+    background-color: var(--clr-Moderate-blue);
+}
+
+.avatar{
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+button{
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: var(--fw-7);
+    color: var(--clr-White);
+    max-width: 6rem;
+    padding: 10px 20px;
+}
+
+.name{
+    color: var(--clr-Dark-blue);
+    font-weight: var(--fw-7);
+}
+
+.time{
+    color: var(--clr-Grayish-Blue);
+}
+
+.replyto{
+    color: var(--clr-Moderate-blue);
+    font-weight: var(--fw-7);
+    margin-right: 0.4rem;
+}
+
+.reply{
+    color: var(--clr-Moderate-blue);
+    font-weight: var(--fw-7);
+}
+
+.reply:hover, .submit-btn:hover{
+    opacity: 0.5;
+}
+
+.delete{
+    color: var(--clr-Soft-Red);
+    font-weight: var(--fw-7);
+    margin-right: 1rem;
+}
+
+.you{
+    background-color: var(--clr-Moderate-blue);
+    color: var(--clr-White);
+    font-weight: var(--fw-7);
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.update-btn{
+    background-color: var(--clr-Moderate-blue);
+    float: right;
+    margin-top: 1.5rem;
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { color: hsl(228, 45%, 44%); }

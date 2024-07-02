@@ -1,0 +1,41 @@
+.modal-bg {
+    position: fixed;
+    inset: 0;
+    background-color: hsla(211, 10%, 45%, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+.modal{
+    background-color: white;
+    width: 80%;
+    margin-inline: auto;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    max-width: 25rem;
+}
+
+.modal p{
+    margin-block: 1.5rem;
+    color: hsl(211, 10%, 45%);
+}
+
+.yes{
+    background-color: hsl(358, 79%, 66%);
+}
+
+.no{
+    background-color: hsla(212, 24%, 26%, 0.7);
+}
+
+.confirm-btn{
+    max-width: none;
+}
+
+.modal-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
